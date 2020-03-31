@@ -1,0 +1,236 @@
+<!DOCTYPE html> <!-- The new doctype -->
+<html>
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>SymChec</title>
+        
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        
+        
+        
+    </head>
+    
+    <body>
+    	
+    	<section id="page"> <!-- Defining the #page section with the section tag -->
+    
+            <header> <!-- Defining the header section of the page with the appropriate tag -->
+            
+                <hgroup>
+                    <h1>SymChec</h1>
+                    <h3>Online Tool</h3>
+                </hgroup>
+                                
+                
+            </header>
+            
+            <section id="articles"> <!-- A new section with the articles -->
+
+				<!-- Article 1 start -->
+
+                
+                <article id="article1"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
+                    <h2>Please check all the symptoms you're experiencing:</h2>
+                <div class="line"></div>  <!-- Dividing line -->
+                    
+<div class=article>
+  <div id=thiscontainer>
+<label class="container">
+  <input type="checkbox" id="myCheck0"  onclick="myFunction()"> Cough
+  <span class="checkmark"></span>
+</label> 
+<label class="container">
+  <input type="checkbox" id="myCheck1"  onclick="myFunction()"> Colds
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  <input type="checkbox" id="myCheck2"  onclick="myFunction()">Diarrhea
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  
+<input type="checkbox" id="myCheck3"  onclick="myFunction()"> Throat Pain
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  <input type="checkbox" id="myCheck4"  onclick="myFunction()"> Body Pain
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  <input type="checkbox" id="myCheck5"  onclick="myFunction()"> Headache
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  <input type="checkbox" id="myCheck6"  onclick="myFunction2()"> Fever
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+  <input type="checkbox" id="myCheck7"  onclick="myFunction2()"> Difficulty in breathing/Shortness of breath 
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <input type="checkbox" id="myCheck8"  onclick="myFunction2()"> Weakness 
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <input type="checkbox" id="myCheck9"  onclick="myFunction3()"> Do you have travel history?
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <input type="checkbox" id="myCheck10"  onclick="myFunction3()"> Have you been to places with positive Covid-19 cases?
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <input type="checkbox" id="myCheck11"  onclick="myFunction3()">Do you have direct contact with people that are positive of Covid-19?
+  <span class="checkmark"></span>
+</label>
+
+<button class=butt2 onclick="myFun2()"> CHECK NOW </button>
+</div>
+<div class=result>
+<p id="text" style="display:none">You're just stressed. Rest at home :)</p>
+<p id="text2" style="display:none"> 1. Increase fluid intake. </br>
+2. Wash hands regularly </br>
+3. Practice proper hygiene. </p>
+<p id="text3" style="display:none">PLEASE CONSULT A DOCTOR IMMEDIATELY.</p>
+<p id="text4" style="display:none"> Call emergency health hotline IMMEDIATELY.</p>
+<button class=butt2 id=butt2 style="display:none" onclick="resett()"> OKAY </button>
+
+</div>
+</div>
+</article>
+                
+				<!-- Article 1 end -->
+
+
+				
+
+            </section>
+
+        <footer> <!-- Marking the footer section -->
+
+           <div class="line"></div>
+           
+           <p class=update > Updated March 2020</p> <!-- Change the copyright notice -->
+           
+        
+           
+
+        </footer>
+            
+		</section> <!-- Closing the #page section -->
+        
+        <!-- JavaScript Includes -->
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="jquery.scrollTo-1.4.2/jquery.scrollTo-min.js"></script>
+        <script src="script.js"></script>
+
+<script>
+var counterr=0;
+var text = document.getElementById("text");
+var text2 = document.getElementById("text2");
+var text3 = document.getElementById("text3");
+var text4 = document.getElementById("text4");
+var thiscontainer = document.getElementById("thiscontainer");
+var butt= document.getElementById("butt2");
+function myFunction() 
+{
+    counterr++;
+
+}
+ 
+ function myFunction2() 
+{
+    counterr=counterr+2;
+
+}
+ function myFunction3() 
+{
+    counterr=counterr+3;
+
+}
+ function myFun3() 
+{
+    
+
+}
+function myFun2() {
+
+    if (counterr>=0 && counterr<=2)
+{   
+
+   text.style.display = "block";
+   butt.style.display = "inline";
+    text2.style.display = "none";
+    text3.style.display = "none";
+    text4.style.display = "none";
+    thiscontainer.style.display= "none";
+
+
+    
+}
+
+    else if ((counterr>2) && (counterr <6))
+{
+    text2.style.display = "block";
+    butt.style.display = "inline";
+     text.style.display = "none";
+    text3.style.display = "none";
+    text4.style.display = "none";
+    thiscontainer.style.display= "none";
+
+    
+}
+
+
+else if ((counterr>5) && (counterr <13))
+{
+    text3.style.display = "block";
+    butt.style.display = "inline";
+     text2.style.display = "none";
+    text.style.display = "none";
+    text4.style.display = "none";
+    thiscontainer.style.display= "none";
+    
+   
+}
+
+ else if (counterr>13)
+{
+    text4.style.display = "block"; 
+    butt.style.display = "inline";
+    text2.style.display = "none";
+    text3.style.display = "none";
+    text.style.display = "none";
+    thiscontainer.style.display= "none";
+  
+
+}
+}
+function resett()
+{
+
+    counterr=0;
+thiscontainer.style.display= "inline";
+  butt.style.display = "none";
+  text4.style.display = "none"; 
+    text2.style.display = "none";
+    text3.style.display = "none";
+    text.style.display = "none";
+
+  for (var i=0; i<=12; i++)
+  {
+    document.getElementById("myCheck"+i).checked = false;
+  }
+
+}
+</script>
+    </body>
+</html>
